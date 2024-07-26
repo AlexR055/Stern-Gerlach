@@ -13,7 +13,7 @@ additangle2 = 0
 # Enters number of particles
 while True:
     try:
-        particles = int(input("How many random spin 1/2 particles?: "))
+        particles = int(input("How many random spin 1/2 particles?: ")).strip()
 
         if particles > 100000:
             print("Too many random spin 1/2 particles! Must be 100000 or less.")
@@ -21,7 +21,7 @@ while True:
         else:
             while True:
                 try:
-                    angle = int(input("What is the angle in degrees?: "))
+                    angle = int(input("What is the angle in degrees?: ")).strip()
                     break
                 except ValueError:
                     pass
