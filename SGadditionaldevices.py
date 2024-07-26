@@ -13,7 +13,7 @@ def moredev(): # Need to add calculations for angles in here
     # First device code
     while True:
         try:
-            additionaldev = input("Would you like to add another device? (y/n): ").strip()
+            additionaldev = input("Would you like to add another device? (y/n): ").strip().lower()
             if additionaldev == "y":
                 devnumber += 1
                 while True:
@@ -24,7 +24,7 @@ def moredev(): # Need to add calculations for angles in here
                         continue
                 while True:
                     try:
-                        additionaldev2 = input("Would you like to add another device? (y/n): ").strip()
+                        additionaldev2 = input("Would you like to add another device? (y/n): ").strip().lower()
                         if additionaldev2 == "y":
                             devnumber += 1
                             while True:
