@@ -13,7 +13,7 @@ additangle2 = 0
 # Enters number of particles
 while True:
     try:
-        particles = int(input("How many random spin 1/2 particles?: ")).strip()
+        particles = int(input("How many random spin 1/2 particles?: ")).strip().lower()
 
         if particles > 100000:
             print("Too many random spin 1/2 particles! Must be 100000 or less.")
