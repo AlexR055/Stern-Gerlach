@@ -2,7 +2,7 @@ from math import *
 import numpy as np
 from moredev import moredev
 
-
+# Need to consider states collapsing for top and bottom
 ######################################################
 # Library of eigenvectors in z-basis #
 # |+z> = np.array([[1],[0]])
