@@ -40,8 +40,7 @@ class Particles:
 #######################
 # More device classes #
 #######################
-def dev_number(devnum):
-    return devnum
+
 
 class Devices:
     def __init__(self, device):
