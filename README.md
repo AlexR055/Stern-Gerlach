@@ -12,3 +12,5 @@ Linear algebra is used to calculate the probability that a specific eigenvector 
 
 The Stern-Gerlach experiment is foundational to the formulation of the idea of spin and the quantization of angular momentum in quantum mechanics.
 
+GUI functionality and interactability to come, with the ability to link different channels.
+
