@@ -14,3 +14,5 @@ The Stern-Gerlach experiment is foundational to the formulation of the idea of s
 
 GUI functionality and interactability to come, with the ability to link different channels.
 
+Feel free to run this code to assist in your learning, but please contact me before using it for any other purpose, or if you wish to implement it elsewhere.
+
