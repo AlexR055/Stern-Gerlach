@@ -1,5 +1,4 @@
-# Stern-Gerlach
-Stern-Gerlach experiment simulation
+# Stern-Gerlach experiment simulation
 
 This code is intended to simulate the Stern-Gerlach experiment in quantum mechanics.
 The code works by capturing user input for the number of particles to be sent through the device,
