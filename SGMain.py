@@ -65,7 +65,7 @@ def moredev():
     devnum = 0
     while True:
         try:
-            d = Devices(input('Would you like to add another device? (y/n) '))
+            d = Devices(input('Would you like to add another device? (y/n) ').lower().strip())
             if d.device == 'y':
                 devices.append(d)
                 devnum = dev_number(devnum)
