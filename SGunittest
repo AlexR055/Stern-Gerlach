@@ -1,0 +1,41 @@
+import unittest
+from math import pi
+from unittest.mock import patch
+import io
+from SternGerlachMathNew import Particles, moredev, lin_alg  # Replace 'your_module' with the actual module name
+
+
+class TestSternGerlach(unittest.TestCase):
+    @patch('builtins.input', side_effect=['10000', '180', 'y', '180', 'n'])
+    def test_scenario(self, mock_input):
+        # Test Particles class
+        amount = int(input("How many random spin 1/2 particles?: "))
+        angle1 = int(input("What is the angle of the SG device, in degrees?: "))
+
+        i_p = Particles(amount)
+        rad_angle1 = i_p.angle_calc(angle1)
+        top_prob, bot_prob = i_p.first_device(rad_angle1, amount)
+
+        self.assertEqual(amount, 10000)
+        self.assertEqual(angle1, 180)
+        self.assertIsNotNone(rad_angle1)
+        self.assertTrue(0 <= top_prob <= amount)
+        self.assertTrue(0 <= bot_prob <= amount)
+        self.assertEqual(top_prob + bot_prob, amount)
+
+        # Test moredev function
+        devices = moredev()
+        self.assertEqual(len(devices), 1)
+        self.assertEqual(devices[0].angles[0], pi)
+
+        # Test lin_alg function
+        # Redirect stdout to capture the print output
+        with patch('sys.stdout', new=io.StringIO()) as fake_out:
+            lin_alg(rad_angle1, devices, amount)
+            output = fake_out.getvalue().strip()
+
+        self.assertIn('Additional Device #1 radian angle:', output)
+
+
+if __name__ == '__main__':
+    unittest.main()
