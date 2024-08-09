@@ -94,25 +94,24 @@ def lin_alg(rad_angle1, devices, top_prob, bot_prob):
 
     # Probabilities for the particles after passing through additional devices
     for i, device in enumerate(devices):
-        # Calculate the state vectors for the next device angle
+        # Calculates the state vectors for the next device angle
         state_device_top = np.array([[np.cos(device.angles[0] / 2)], [np.sin(device.angles[0] / 2) * 1j]])
         state_device_bot = np.array([[np.sin(device.angles[0] / 2)], [-np.cos(device.angles[0] / 2) * 1j]])
 
-        # Calculate projection probabilities
+        # Calculates projection probabilities
         prob_top_given_top = np.abs(np.dot(np.conj(state_top_channel1.T), state_device_top)) ** 2
         prob_bot_given_top = np.abs(np.dot(np.conj(state_top_channel1.T), state_device_bot)) ** 2
         prob_top_given_bot = np.abs(np.dot(np.conj(state_bot_channel1.T), state_device_top)) ** 2
         prob_bot_given_bot = np.abs(np.dot(np.conj(state_bot_channel1.T), state_device_bot)) ** 2
 
-        # Update probabilities for the next device
+        # Updates probabilities for the next device
         new_top_prob = top_prob * prob_top_given_top + bot_prob * prob_top_given_bot
         new_bot_prob = top_prob * prob_bot_given_top + bot_prob * prob_bot_given_bot
 
-        # Display the calculated probabilities for this step
         print(f"Device #{i + 2}: Top -> {round(new_top_prob[0, 0]):.4f}, Bottom -> {round(new_bot_prob[0, 0]):.4f}")
 
 
-        # Update the probabilities for the next iteration
+        # Updates the probabilities for the next iteration
         top_prob = new_top_prob[0, 0]
         bot_prob = new_bot_prob[0, 0]
 
