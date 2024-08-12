@@ -30,7 +30,6 @@ class Particles:
         return rad_angle1
 
     def first_device(self, rad_angle1, amount):
-
         prob_top = np.abs(np.cos(rad_angle1 / 2)) ** 2
         prob_bot = 1 - prob_top
         top_prob = round(prob_top * amount)
